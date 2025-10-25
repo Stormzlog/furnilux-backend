@@ -26,11 +26,11 @@ app.post('/initialize-transaction', async (req, res) => {
             { display_name: 'Phone Number', variable_name: 'phone', value: phone }
           ]
         },
-        callback_url: 'https://your-back4app-subdomain.back4app.io/thank-you.html' // Update later
+        callback_url: 'https://furnilux-1.web.app/thank-you.html' // Update later
       },
       {
         headers: {
-          Authorization: 'Bearer YOUR_PAYSTACK_SECRET_KEY', // Replace with your secret key
+          Authorization: 'sk_live_83e78e59d23816c2f400106c33e85455f1415b9c', // Replace with your secret key
           'Content-Type': 'application/json'
         }
       }
@@ -53,7 +53,7 @@ app.get('/verify-transaction', async (req, res) => {
   try {
     const response = await axios.get(`https://api.paystack.co/transaction/verify/${reference}`, {
       headers: {
-        Authorization: 'Bearer YOUR_PAYSTACK_SECRET_KEY' // Replace with secret key
+        Authorization: 'sk_live_83e78e59d23816c2f400106c33e85455f1415b9c' // Replace with secret key
       }
     });
     console.log('Verification response:', response.data);
