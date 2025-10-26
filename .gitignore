@@ -1,0 +1,41 @@
+# PHP
+vendor/
+composer.lock
+
+# Environment and config files
+.env
+.env.local
+.env.production
+.env.development
+config.php
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs and cache
+*.log
+*.cache
+storage/
+tmp/
+cache/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Node-related (if you ever mix JS or build scripts)
+node_modules/
+package-lock.json
+yarn.lock
+
+# OS files
+*.bak
+*.swp
+
+# Render or build artifacts
+render.yaml
+*.zip
+*.tar.gz
