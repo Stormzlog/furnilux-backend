@@ -1,19 +1,20 @@
-# Use official PHP image with Apache
+# Use official PHP Apache image
 FROM php:8.2-apache
 
-# Enable common PHP extensions
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+# Enable required Apache modules
+RUN a2enmod rewrite headers
 
-# Copy project files
+# Copy project files to web root
 COPY . /var/www/html/
 
-# Allow cross-origin requests (CORS)
-RUN echo 'Header set Access-Control-Allow-Origin "*"' >> /etc/apache2/apache2.conf && \
-    echo 'Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"' >> /etc/apache2/apache2.conf && \
-    echo 'Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"' >> /etc/apache2/apache2.conf
+# Set working directory
+WORKDIR /var/www/html
 
-# Expose web server port
+# Set permissions (optional, helps on some hosts)
+RUN chown -R www-data:www-data /var/www/html
+
+# Expose port 80
 EXPOSE 80
 
-# Start Apache
+# Start Apache server
 CMD ["apache2-foreground"]
