@@ -1,7 +1,5 @@
 {
-  "name": "furnilux-backend",
-  "description": "Furnilux Paystack backend",
-  "require": {
-    "php": "^8.0"
-  }
+  "name": "furnilux/furnilux-backend",
+  "description": "Furnilux backend for Paystack integration",
+  "require": {}
 }
