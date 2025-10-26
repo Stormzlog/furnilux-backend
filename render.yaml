@@ -1,7 +1,13 @@
 services:
   - type: web
     name: furnilux-backend
-    env: php
+    env: docker
     plan: free
-    buildCommand: ""
-    startCommand: ""
+    region: frankfurt  # or oregon if you want US location
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: PAYSTACK_SECRET_KEY
+        value: sk_live_83e78e59d23816c2f400106c33e85455f1415b9c
+      - key: PAYSTACK_PUBLIC_KEY
+        value: pk_live_786640d3fa6f3afef9aac49bf813a6a8f75523d3
