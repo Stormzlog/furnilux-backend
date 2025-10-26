@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json");
-
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 // ⚠️ Never expose your live secret key in any front-end code
 $secret_key = "sk_live_83e78e59d23816c2f400106c33e85455f1415b9c"; 
 
